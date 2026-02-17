@@ -1,40 +1,37 @@
 # Exchange rate forecasting and PPP testing (Ireland and UK)
 
 ## Overview
-This repository contains the code used to reproduce the core results from the EC6011 Business Forecasting report on Ireland and the United Kingdom using monthly data from January 2014 to December 2024. The analysis tests Purchasing Power Parity and forecasts the log real exchange rate using the Box Jenkins ARIMA methodology in R. 
+This repository contains the final report for a time series analysis of the Ireland United Kingdom exchange rate from 2014 to 2024. The study examines Purchasing Power Parity and applies Box Jenkins ARIMA modelling to forecast the real exchange rate.
 
-## What this code reproduces
-1. Log transformations of nominal exchange rate, real exchange rate, CPI Ireland, CPI UK :contentReference[oaicite:2]{index=2}
-2. Stationarity testing using ADF tests :contentReference[oaicite:3]{index=3}
-3. Absolute PPP test using regression of log nominal exchange rate on log relative prices, with slope around minus 1.029 and R squared around 0.36 
-4. Relative PPP test using regression of change in log nominal exchange rate on inflation differential, showing no support with slope near zero and p value around 0.989 
-5. ARIMA model comparison for log real exchange rate and selection of ARIMA(0,1,0) using AIC and Ljung Box diagnostics (p value around 0.8596) 
-6. 12 month forecast from ARIMA(0,1,0) :contentReference[oaicite:7]{index=7}
+This project was completed as part of the EC6011 Business Forecasting module.
 
-## Data required
-The script expects a single Excel file named data.xlsx in the same folder as analysis.R.
+## Objectives
+- Analyse nominal and real EUR GBP exchange rate behaviour
+- Test absolute and relative Purchasing Power Parity
+- Apply ARIMA modelling using the Box Jenkins methodology
+- Generate and evaluate short term forecasts
+- Interpret results in an applied economic context
 
-Minimum required columns:
-Date
-NER
-CPI_IE
-CPI_UK
+## Methods
+- Log transformation of exchange rate and CPI series
+- Augmented Dickey Fuller tests for stationarity
+- Regression based PPP testing
+- ARIMA model identification using ACF and PACF
+- Model selection using AIC and residual diagnostics
+- 12 month forecasting
 
-Optional column:
-RER
+## Key findings
+- Exchange rate and CPI series are non stationary in levels
+- Absolute PPP shows statistical significance but weak theoretical support
+- Relative PPP is not supported in this sample period
+- ARIMA(0,1,0) is selected as the best forecasting model
+- Forecasts are flat with increasing uncertainty
 
-Definitions used in the report:
-NER is GBP per EUR
-RER is computed as NER times CPI_UK divided by CPI_IE 
-
-If your column names differ, the script still works because it uses flexible matching.
-
-## How to run
-1. Upload data.xlsx into the repository
-2. Open analysis.R in RStudio
-3. Run the script from top to bottom
-
-The script prints model summaries and saves key plots in the working directory.
 
 ## Notes
-This is a student project replication of the report workflow. The results are expected to match the report narrative, including the selection of ARIMA(0,1,0) as the best fitting model for log real exchange rate over this sample period. 
+The dataset used in this project is not included due to size and licensing restrictions. This repository focuses on documenting the analytical approach and final results.
+
+## Author
+Sai Vishnu Kandagattla  
+MSc Business Analytics  
+University College Cork
